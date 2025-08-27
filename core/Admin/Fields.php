@@ -52,8 +52,7 @@ class Fields
 	 */
 	public function load_carbon_fields()
 	{
-		$plugin_url = plugin_dir_url(dirname(dirname(__FILE__)));
-		define('\Carbon_Fields\URL', $plugin_url . 'vendor/htmlburger/carbon-fields/');
+		define('\Carbon_Fields\URL', SQUIDGE_VENDOR_URL . '/htmlburger/carbon-fields/');
 		\Carbon_Fields\Carbon_Fields::boot();
 	}
 
@@ -65,8 +64,7 @@ class Fields
 	 */
 	public function styles_and_scripts()
 	{
-		$plugin_url = plugin_dir_url(dirname(dirname(__FILE__)));
-		wp_enqueue_style('admin-styles', $plugin_url . '/assets/admin.css');
+		wp_enqueue_style('admin-styles', SQUIDGE_ASSETS_URL . '/admin.css');
 	}
 
 	/**

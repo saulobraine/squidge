@@ -18,7 +18,7 @@ class AdminScriptsEnqueuer
   {
     wp_enqueue_script(
       'squidge-admin',
-      $this->pluginUrl . '/assets/admin/admin.js',
+      SQUIDGE_ASSETS_URL . '/admin/admin.js',
       ['jquery', 'wp-util'],
       $this->pluginVersion,
       true
@@ -34,7 +34,7 @@ class AdminScriptsEnqueuer
 
     wp_enqueue_script(
       'squidge-batch-optimizer',
-      $this->pluginUrl . '/assets/admin/batch-optimizer.js',
+      SQUIDGE_ASSETS_URL . '/admin/batch-optimizer.js',
       ['jquery', 'squidge-admin'],
       $this->pluginVersion,
       true

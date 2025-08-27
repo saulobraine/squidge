@@ -9,6 +9,8 @@ node_modules/
 *.tar.gz
 *.zip
 
+vendor/
+
 # OS Folders
 .DS_Store
 node_modules

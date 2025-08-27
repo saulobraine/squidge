@@ -18,14 +18,14 @@ class AdminStylesEnqueuer
   {
     wp_enqueue_style(
       'squidge-admin',
-      $this->pluginUrl . '/assets/admin/admin.css',
+      SQUIDGE_ASSETS_URL . '/admin/admin.css',
       [],
       $this->pluginVersion
     );
 
     wp_enqueue_style(
       'squidge-batch-optimizer',
-      $this->pluginUrl . '/assets/admin/batch-optimizer.css',
+      SQUIDGE_ASSETS_URL . '/admin/batch-optimizer.css',
       ['squidge-admin'],
       $this->pluginVersion
     );

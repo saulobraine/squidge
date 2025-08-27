@@ -21,6 +21,10 @@ defined('SQUIDGE_ASSETS_URL') || define('SQUIDGE_ASSETS_URL', SQUIDGE_PLUGIN_URL
 defined('SQUIDGE_CORE_PATH') || define('SQUIDGE_CORE_PATH', SQUIDGE_PLUGIN_DIR . 'core');
 defined('SQUIDGE_INFRASTRUCTURE_PATH') || define('SQUIDGE_INFRASTRUCTURE_PATH', SQUIDGE_PLUGIN_DIR . 'infrastructure');
 
+// Constantes adicionais
+defined('SQUIDGE_VENDOR_URL') || define('SQUIDGE_VENDOR_URL', SQUIDGE_PLUGIN_URL . 'vendor');
+defined('SQUIDGE_MIGRATIONS_PATH') || define('SQUIDGE_MIGRATIONS_PATH', SQUIDGE_CORE_PATH . 'Database/Migrations');
+
 // Constantes de upload (definidas dinamicamente)
 // SQUIDGE_UPLOAD_DIR - Diretório de upload do WordPress
 // SQUIDGE_UPLOAD_URL - URL de upload do WordPress
@@ -36,6 +40,8 @@ defined('SQUIDGE_INFRASTRUCTURE_PATH') || define('SQUIDGE_INFRASTRUCTURE_PATH', 
  * SQUIDGE_ASSETS_URL           - URL para assets (CSS/JS)
  * SQUIDGE_CORE_PATH            - Caminho para classes core
  * SQUIDGE_INFRASTRUCTURE_PATH  - Caminho para infraestrutura
+ * SQUIDGE_VENDOR_URL           - URL para dependências vendor
+ * SQUIDGE_MIGRATIONS_PATH      - Caminho para migrações de banco
  *
  * Exemplo de uso:
  * - CSS: SQUIDGE_ASSETS_URL . '/admin/admin.css'
