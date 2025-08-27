@@ -126,7 +126,7 @@ class Service
 	/**
 	 * Checks if a command exists.
 	 *
-	 * shell_exec is required to check to see if the library
+	 * Uses native PHP methods to check if the library
 	 * is installed on the client's operating system.
 	 * Checks to see if the command name is in the allowed
 	 * array before continuing.
@@ -146,8 +146,55 @@ class Service
 		if (!in_array(static::cmd_name(), $allowed)) {
 			return false;
 		}
-		$return = shell_exec(sprintf("which %s", escapeshellarg(static::cmd_name())));
-		return !empty($return);
+
+		// Use native PHP methods for cross-platform compatibility
+		$command = static::cmd_name();
+
+		// Method 1: Check if command exists in PATH using exec with error suppression
+		if (function_exists('exec')) {
+			$output = [];
+			$return_var = 0;
+
+			// Try to execute the command with --version or --help to check if it exists
+			if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+				// Windows: try to execute the command directly
+				@exec($command . ' --version 2>nul', $output, $return_var);
+				if ($return_var === 0) {
+					return true;
+				}
+
+				// Fallback: check common Windows paths
+				$paths = [
+					'C:\\ProgramData\\chocolatey\\bin\\',
+					'C:\\Users\\' . get_current_user() . '\\scoop\\shims\\',
+					'C:\\tools\\',
+					'C:\\Program Files\\',
+					'C:\\Program Files (x86)\\'
+				];
+
+				foreach ($paths as $path) {
+					if (file_exists($path . $command . '.exe')) {
+						return true;
+					}
+				}
+			} else {
+				// Unix/Linux: use which command
+				@exec("which $command 2>/dev/null", $output, $return_var);
+				if ($return_var === 0) {
+					return true;
+				}
+			}
+		}
+
+		// Method 2: Check if the command is accessible via shell_exec
+		if (function_exists('shell_exec')) {
+			$output = @shell_exec($command . ' --version 2>&1');
+			if (!empty($output) && strpos($output, 'error') === false) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**

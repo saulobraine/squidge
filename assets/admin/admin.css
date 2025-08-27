@@ -1,0 +1,361 @@
+/* Squidge Admin CSS */
+
+/* Indicador de carregamento */
+.squidge-page-loaded {
+	opacity: 1;
+	transition: opacity 0.3s ease;
+}
+
+.squidge-page-loaded .squidge-dashboard {
+	animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Notificações */
+.squidge-notification {
+	position: fixed;
+	top: 32px;
+	right: 20px;
+	padding: 12px 20px;
+	border-radius: 4px;
+	color: white;
+	font-weight: 500;
+	z-index: 999999;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	animation: slideInRight 0.3s ease;
+}
+
+.squidge-notification-info {
+	background: #0073aa;
+}
+
+.squidge-notification-success {
+	background: #46b450;
+}
+
+.squidge-notification-warning {
+	background: #ffb900;
+}
+
+.squidge-notification-error {
+	background: #dc3232;
+}
+
+@keyframes slideInRight {
+	from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.squidge-dashboard {
+	max-width: 1200px;
+}
+
+/* Grid de Estatísticas */
+.squidge-stats-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+	margin: 20px 0;
+}
+
+.squidge-stat-card {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.squidge-stat-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.squidge-stat-card .stat-icon {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.squidge-stat-card .stat-icon .dashicons {
+	font-size: 48px;
+	color: #667eea;
+}
+
+.squidge-stat-card .stat-content h3 {
+	font-size: 32px;
+	margin: 0 0 10px 0;
+	color: #333;
+	text-align: center;
+}
+
+.squidge-stat-card .stat-content p {
+	margin: 0;
+	text-align: center;
+	color: #666;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* Container de Gráficos */
+.squidge-chart-container {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 20px;
+	margin: 20px 0;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.squidge-chart-container h2 {
+	margin-top: 0;
+	color: #333;
+}
+
+/* Tabela de Otimizações */
+.squidge-table-container {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.squidge-reduction-badge {
+	background: #10b981;
+	color: white;
+	padding: 4px 8px;
+	border-radius: 12px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.squidge-status-badge {
+	padding: 4px 8px;
+	border-radius: 12px;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.squidge-status-badge.status-success {
+	background: #10b981;
+	color: white;
+}
+
+.squidge-status-badge.status-error {
+	background: #ef4444;
+	color: white;
+}
+
+.squidge-status-badge.status-pending {
+	background: #f59e0b;
+	color: white;
+}
+
+/* Grid de Jobs */
+.squidge-jobs-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+	margin: 20px 0;
+}
+
+.squidge-job-card {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.squidge-job-card .job-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.squidge-job-card .job-header h3 {
+	margin: 0;
+	color: #333;
+}
+
+.job-status {
+	padding: 4px 12px;
+	border-radius: 20px;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.job-status.status-running {
+	background: #10b981;
+	color: white;
+}
+
+.job-status.status-paused {
+	background: #f59e0b;
+	color: white;
+}
+
+.job-status.status-completed {
+	background: #667eea;
+	color: white;
+}
+
+.job-status.status-cancelled {
+	background: #6b7280;
+	color: white;
+}
+
+.job-status.status-error {
+	background: #ef4444;
+	color: white;
+}
+
+/* Barra de Progresso */
+.progress-bar {
+	width: 100%;
+	height: 8px;
+	background: #e5e7eb;
+	border-radius: 4px;
+	overflow: hidden;
+	margin: 10px 0;
+}
+
+.progress-fill {
+	height: 100%;
+	background: linear-gradient(90deg, #667eea, #10b981);
+	transition: width 0.3s ease;
+}
+
+.progress-text {
+	font-size: 12px;
+	color: #666;
+	text-align: center;
+}
+
+/* Estatísticas do Job */
+.job-stats {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15px;
+	padding-top: 15px;
+	border-top: 1px solid #e5e7eb;
+}
+
+.job-stats span {
+	font-size: 12px;
+	color: #666;
+}
+
+/* Grid de Ações */
+.squidge-actions-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px;
+	margin: 20px 0;
+}
+
+.squidge-action-card {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 20px;
+	text-decoration: none;
+	color: inherit;
+	text-align: center;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.squidge-action-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+	text-decoration: none;
+	color: inherit;
+}
+
+.squidge-action-card .dashicons {
+	font-size: 48px;
+	color: #667eea;
+	margin-bottom: 15px;
+}
+
+.squidge-action-card h3 {
+	margin: 0 0 10px 0;
+	color: #333;
+}
+
+.squidge-action-card p {
+	margin: 0;
+	color: #666;
+	font-size: 14px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+	.squidge-stats-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.squidge-jobs-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.squidge-actions-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.job-stats {
+		flex-direction: column;
+		gap: 5px;
+	}
+}
+
+/* Estados de Loading */
+.squidge-loading {
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+.squidge-loading::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	margin: -10px 0 0 -10px;
+	border: 2px solid #f3f3f3;
+	border-top: 2px solid #667eea;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

@@ -18,9 +18,17 @@ if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
 
-// Require autoload.
+// Incluir arquivo de constantes
+require_once __DIR__ . '/constants.php';
+
+// Require autoload do Composer primeiro (para Carbon Fields)
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {
 	require(__DIR__ . '/vendor/autoload.php');
+}
+
+// Require autoload personalizado para nossas classes
+if (file_exists(__DIR__ . '/core/autoload.php')) {
+	require(__DIR__ . '/core/autoload.php');
 }
 
 // Boot Squidge (Once).
