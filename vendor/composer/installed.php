@@ -1,74 +1,59 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => 'ainsley-clark/squidge',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '459ad80e403c3c1090d8871f2c778c79b665582e',
+        'type' => 'plugin',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
     ),
-    'reference' => '369aee964d46714ea0ba80db665486f62fff040d',
-    'name' => 'ainsley-clark/wp-squidge',
-  ),
-  'versions' => 
-  array (
-    'ainsley-clark/wp-squidge' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '369aee964d46714ea0ba80db665486f62fff040d',
+    'versions' => array(
+        'ainsley-clark/squidge' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '459ad80e403c3c1090d8871f2c778c79b665582e',
+            'type' => 'plugin',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'composer/installers' => array(
+            'pretty_version' => 'v2.3.0',
+            'version' => '2.3.0.0',
+            'reference' => '12fb2dfe5e16183de69e784a7b84046c43d97e8e',
+            'type' => 'composer-plugin',
+            'install_path' => __DIR__ . '/./installers',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'htmlburger/carbon-field-number' => array(
+            'pretty_version' => 'v3.0.0',
+            'version' => '3.0.0.0',
+            'reference' => '3bddfaf256472d6071c62e566d011e1f2cdae0c6',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../htmlburger/carbon-field-number',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'htmlburger/carbon-fields' => array(
+            'pretty_version' => 'v3.6.9',
+            'version' => '3.6.9.0',
+            'reference' => 'f82e80e3e3469d6e86cc17a8950b918ad448a059',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../htmlburger/carbon-fields',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'htmlburger/carbon-fields-plugin' => array(
+            'pretty_version' => 'v3.6.9',
+            'version' => '3.6.9.0',
+            'reference' => '1ac5c4de4336432bf37a2134dd1c988713ae4130',
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../carbon-fields-plugin',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
     ),
-    'composer/installers' => 
-    array (
-      'pretty_version' => 'v1.12.0',
-      'version' => '1.12.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'd20a64ed3c94748397ff5973488761b22f6d3f19',
-    ),
-    'htmlburger/carbon-field-number' => 
-    array (
-      'pretty_version' => 'v3.0.0',
-      'version' => '3.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '3bddfaf256472d6071c62e566d011e1f2cdae0c6',
-    ),
-    'htmlburger/carbon-fields' => 
-    array (
-      'pretty_version' => 'v3.3.2',
-      'version' => '3.3.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'dd5663e14c6db365323b688dbae1cfbeaf14bee7',
-    ),
-    'htmlburger/carbon-fields-plugin' => 
-    array (
-      'pretty_version' => 'v3.3.2',
-      'version' => '3.3.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'b4fca16a542c30e494c2cfa0ab6fe5f5868ad35c',
-    ),
-    'roundcube/plugin-installer' => 
-    array (
-      'replaced' => 
-      array (
-        0 => '*',
-      ),
-    ),
-    'shama/baton' => 
-    array (
-      'replaced' => 
-      array (
-        0 => '*',
-      ),
-    ),
-  ),
 );
